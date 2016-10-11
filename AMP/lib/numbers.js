@@ -30,8 +30,3 @@ Number.prototype.divisors = function () {
     }
     return ans;
 };
-
-Number.prototype.primeFactorization = function () {
-    "use strict";
-
-};

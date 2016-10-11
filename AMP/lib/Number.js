@@ -23,14 +23,26 @@ Number.prototype.divisors = function(){
             ans.push(i);
         }
     }
+    ans.push(max.valueOf());
     return ans;
 }
 
 Number.prototype.primeFactorization = function (){
     console.log("prime aangekomen");
-}
-
-
-//window.addEventListener("load", function () {
-//
-//});
+    var ans = [];
+    var primes = [];
+    var temp = this;
+    for(let i = 2; i<temp/2; i++){
+        if(i.divisors().length == 2){
+            primes.push(i);
+        }
+    }
+    
+    for (let i =0; i<primes.length; i++){
+            while(temp.isDivisor(primes[i])){
+                ans.push(primes[i]);
+                temp = temp/primes[i];
+            }
+        }
+    return ans;
+};
